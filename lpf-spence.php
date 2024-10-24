@@ -119,6 +119,8 @@ foreach ($array as $item) {
 
   $ignicion = $json2->state->inputs[0] ? 1 : 0;
 
+  $numero_evento=($ignicion==1) ? 45:46;
+
   $numero_satelites= mt_rand(10,15);
 
 
@@ -126,6 +128,7 @@ $fecha_actual = new DateTime();
 $fecha_inicio= new DateTime($ultima_Conexion);
 
 // Calcular la diferencia
+
 $diferencia = $fecha_actual->diff($fecha_inicio);
 
 // Obtener la diferencia en segundos
@@ -138,7 +141,7 @@ $segundos = $diferencia->days * 24 * 60 * 60 +
   include 'odometro.php';
   //include './hmotor.php';
 
-
+ 
 
 
   $json = array(
@@ -154,7 +157,7 @@ $segundos = $diferencia->days * 24 * 60 * 60 +
 
     'estado_ignicion' => $ignicion,
 
-    'numero_evento' => '45',
+    'numero_evento' => $numero_evento,
 
     'odometro' => number_format($odometro,2,',',''),
 
@@ -163,7 +166,7 @@ $segundos = $diferencia->days * 24 * 60 * 60 +
 
     'hdop' =>1,// $numero_satelites/16,
 
-    'edad_dato' => $segundos,
+    'edad_dato' => strval($segundos),
 
     'rut_conductor' => 'No identificado',
 
@@ -199,9 +202,9 @@ curl_setopt_array($curl, array(
     'Authorization: Bearer 85c18df2-6411-322c-b4a3-af0f959c5583'
   ),
 ));
-
+echo 
 $response = curl_exec($curl);
 
 curl_close($curl);
-echo $response;
+
 
