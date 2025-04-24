@@ -141,6 +141,10 @@ $segundos = $diferencia->days * 24 * 60 * 60 +
   include 'odometro.php';
   //include './hmotor.php';
 
+  include 'driver.php';
+
+  include 'giroscopio.php';
+
  
 
 
@@ -151,7 +155,7 @@ $segundos = $diferencia->days * 24 * 60 * 60 +
     'latitud' => $lat,
     'longitud' => $lng,
     'direccion' => $direccion,
-    'speed' => $speed,
+    'velocidad' => $speed,
 
     'estado_registro' => 1,
 
@@ -168,18 +172,20 @@ $segundos = $diferencia->days * 24 * 60 * 60 +
 
     'edad_dato' => strval($segundos),
 
-    'rut_conductor' => 'No identificado',
+    'rut_conductor' => $rut,
 
-    'nombre_conductor' => 'N/A',
-    'opcional_1' => '111'
+    'nombre_conductor' => $fullName,
+    'opcional_1' => $axisXValue
 
-
+   
   );
 
   $total[$i] = $json;
 
   $i++;
 }
+
+echo
 
 $payload= json_encode(['posicion' => $total]);
 
