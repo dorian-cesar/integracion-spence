@@ -1,10 +1,5 @@
 <?php
-//include "./login/login-lascondes.php";
-// include "login/conexion.php";
 
-//require_once './login/login-bronces.php';
-
-//$cap="b835ef1ecc2a329e0b46cdfa8dcd63c2";
 date_default_timezone_set('America/Santiago');
 
 $user = "spence";
@@ -194,7 +189,7 @@ $payload= json_encode(['posicion' => $total]);
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'http://ei.wisetrack.cl/API/Testing/BHP/InsertarPosicion',
+  CURLOPT_URL => 'https://gw.wisetrack.cl/BHP/1.0.0/InsertarPosicion',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -205,7 +200,7 @@ curl_setopt_array($curl, array(
   CURLOPT_POSTFIELDS =>$payload,
   CURLOPT_HTTPHEADER => array(
     'Content-Type: application/json',
-    'Authorization: Bearer 85c18df2-6411-322c-b4a3-af0f959c5583'
+    'Authorization: Bearer cf37bd88-78b8-4b5d-94d2-d3145f6480db'
   ),
 ));
 echo 
