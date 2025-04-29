@@ -143,10 +143,13 @@ $segundos = $diferencia->days * 24 * 60 * 60 +
 
  $rut_sin_guion = str_replace('-', '', $rut);
 
+ $plate_sin_guion = str_replace('-', '', $plate);
+ 
+
 
   $json = array(
 
-    'patente' => $plate,
+    'patente' => $plate_sin_guion,
     'fecha_hora' => $ultima_Conexion,
     'latitud' => $lat,
     'longitud' => $lng,
