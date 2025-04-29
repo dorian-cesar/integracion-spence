@@ -89,6 +89,7 @@ foreach ($array as $item) {
   //$.state.gps.location.lat
 
 
+
   $lat = $array2 = $json2->state->gps->location->lat;
 
 
@@ -140,7 +141,7 @@ $segundos = $diferencia->days * 24 * 60 * 60 +
 
   include 'giroscopio.php';
 
- 
+ $rut_sin_guion = str_replace('-', '', $rut);
 
 
   $json = array(
@@ -167,7 +168,7 @@ $segundos = $diferencia->days * 24 * 60 * 60 +
 
     'edad_dato' => strval($segundos),
 
-    'rut_conductor' => $rut,
+    'rut_conductor' => $rut_sin_guion,
 
     'nombre_conductor' => $fullName,
     'opcional_1' => $axisXValue
