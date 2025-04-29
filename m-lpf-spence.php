@@ -107,7 +107,8 @@ foreach ($chunks as $chunk) {
     $numero_satelites = mt_rand(10, 15);
 
     $fecha_actual = new DateTime();
-    $fecha_inicio = new DateTime($ultima_Conexion);
+   // $fecha_inicio = new DateTime($ultima_Conexion);
+    $fecha_inicio = new DateTime();
     $diferencia = $fecha_actual->diff($fecha_inicio);
     $segundos = $diferencia->days * 86400 +
                 $diferencia->h * 3600 +
@@ -123,7 +124,8 @@ foreach ($chunks as $chunk) {
 
     $json = [
       'patente' => $plate_sin_guion,
-      'fecha_hora' => $ultima_Conexion,
+      //'fecha_hora' => $ultima_Conexion,
+      'fecha_hora' => date("Y-m-d H:i:s"),
       'latitud' => $lat,
       'longitud' => $lng,
       'direccion' => $direccion,
@@ -145,6 +147,7 @@ foreach ($chunks as $chunk) {
   }
 
   if (!empty($total)) {
+    echo 
     $payload = json_encode(['posicion' => $total]);
 
     $curl = curl_init();
