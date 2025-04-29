@@ -45,7 +45,7 @@ $axisYValue = $data['inputs'][3]['value'] ?? '';
 $axisZValue = $data['inputs'][2]['value'] ?? '';
 $odometerValue = $data['counters'][0]['value'] ?? '';
 $odometerValue=floatval(str_replace(',', '', $odometerValue));
-$odometerValue=number_format($odometerValue, 3, '.', '');
+$odometerValue=number_format($odometerValue, 2, ',', '');
 
 // Imprimir los valores
 /*

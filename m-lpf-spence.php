@@ -114,7 +114,7 @@ foreach ($chunks as $chunk) {
                 $diferencia->i * 60 +
                 $diferencia->s;
 
-    include 'odometro.php';
+  //  include 'odometro.php';
     include 'driver.php';
     include 'giroscopio.php';
 
@@ -131,7 +131,7 @@ foreach ($chunks as $chunk) {
       'estado_registro' => 1,
       'estado_ignicion' => $ignicion,
       'numero_evento' => $numero_evento,
-      'odometro' => number_format($odometro, 2, ',', ''),
+     'odometro' =>  $odometerValue,
       'numero_satelites' => $numero_satelites,
       'hdop' => 1,
       'edad_dato' => strval($segundos),

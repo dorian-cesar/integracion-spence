@@ -134,7 +134,7 @@ $segundos = $diferencia->days * 24 * 60 * 60 +
             $diferencia->s;
 
 
-  include 'odometro.php';
+ // include 'odometro.php';
   //include './hmotor.php';
 
   include 'driver.php';
@@ -162,8 +162,9 @@ $segundos = $diferencia->days * 24 * 60 * 60 +
 
     'numero_evento' => $numero_evento,
 
-    'odometro' => number_format($odometro,2,',',''),
+    'odometro' =>  $odometerValue,
 
+    
   
     'numero_satelites' => $numero_satelites,
 
