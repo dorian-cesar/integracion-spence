@@ -44,7 +44,7 @@ if ($curlError) {
         $fullName = trim($firstName . ' ' . $lastName);
         
         $key_button=$responseData['current']['hardware_key']?? '';
-        $key_button=substr($key_button,4);
+      //  $key_button=substr($key_button,8);
         
         $rut=$responseData['current']['personnel_number']?? '';
 

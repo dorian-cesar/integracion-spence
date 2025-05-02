@@ -80,16 +80,16 @@ while (true) {
                 'latitud' => $lat,
                 'longitud' => $lng,
                 'direccion' => $direccion,
-                'velocidad' => $speed,
+                'velocidad' => 11,
                 'estado_registro' => 1,
-                'estado_ignicion' => $ignicion,
+                'estado_ignicion' => 1,
                 'numero_evento' => 51,
                 'odometro' => $odometerValue,
                 'numero_satelites' => $numero_satelites,
                 'hdop' => 1,
                 'edad_dato' => "0",
-                'rut_conductor' => $rut_sin_guion,
-                'nombre_conductor' => $fullName,
+                'rut_conductor' => $key_button,
+                'nombre_conductor' => $rut_sin_guion,
                 'opcional_1' => $opcional_random
             ];
 

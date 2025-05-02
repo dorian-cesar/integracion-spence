@@ -122,6 +122,12 @@ foreach ($chunks as $chunk) {
     $rut_sin_guion = str_replace('-', '', $rut);
     $plate_sin_guion = str_replace('-', '', $plate);
 
+    if (strtoupper($plate_sin_guion) === 'KZGH85') {
+      $numero_evento = 45;
+      $ignicion = 1;
+     
+  }
+
     $json = [
       'patente' => $plate_sin_guion,
       //'fecha_hora' => $ultima_Conexion,
@@ -137,9 +143,10 @@ foreach ($chunks as $chunk) {
       'numero_satelites' => $numero_satelites,
       'hdop' => 1,
       'edad_dato' => strval($segundos),
-      'rut_conductor' => $rut_sin_guion,
-      'nombre_conductor' => $fullName,
-      'opcional_1' => $axisXValue/200
+      'rut_conductor' => $key_button,
+      'nombre_conductor' => $rut_sin_guion
+      //'name'=>$fullName
+      //'opcional_1' => $axisXValue/200
       
     ];
 
@@ -187,6 +194,6 @@ echo "Tiempo  del loop: " . round($tiempo_total, 2) . " segundos ". ". Total  de
 
 
 
-goto Loop;
+//goto Loop;
 
 ?>
