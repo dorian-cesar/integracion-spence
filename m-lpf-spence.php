@@ -139,7 +139,7 @@ foreach ($chunks as $chunk) {
       'edad_dato' => strval($segundos),
       'rut_conductor' => $rut_sin_guion,
       'nombre_conductor' => $fullName,
-      'opcional_1' => $axisXValue
+      'opcional_1' => $axisXValue/100
     ];
 
     $total[$i] = $json;
