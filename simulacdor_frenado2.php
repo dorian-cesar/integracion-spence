@@ -143,18 +143,18 @@ foreach ($chunks as $chunk) {
       'latitud' => $lat,
       'longitud' => $lng,
       'direccion' => $direccion,
-      'velocidad' => $speed,
+      'velocidad' => 11,
       'estado_registro' => 1,
       'estado_ignicion' => $ignicion,
-      'numero_evento' => $numero_evento,
+      'numero_evento' => 51,
      'odometro' =>  $odometerValue,
       'numero_satelites' => $numero_satelites,
       'hdop' => 1,
       'edad_dato' => strval($segundos),
       'rut_conductor' => $key_button8,
-      'nombre_conductor' => $rut_sin_guion
+      'nombre_conductor' => $rut_sin_guion,
       //'name'=>$fullName
-      //'opcional_1' => $axisXValue/200
+      'opcional_1' => $opcional_random
       
     ];
 
@@ -199,7 +199,7 @@ echo "Tiempo  del loop: " . round($tiempo_total, 2) . " segundos ". ". Total  de
 
 
   // Esperar 1 hora antes de continuar el bucle
-  sleep(1200);
+  sleep(86400);
 
 
 goto Loop;
