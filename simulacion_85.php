@@ -1,6 +1,7 @@
 <?php
 
-date_default_timezone_set('America/Santiago');
+//date_default_timezone_set('America/Santiago');
+date_default_timezone_set('UTC');
 
 $user = "spence";
 
@@ -122,11 +123,16 @@ foreach ($chunks as $chunk) {
     $rut_sin_guion = str_replace('-', '', $rut);
     $plate_sin_guion = str_replace('-', '', $plate);
 
-    if (strtoupper($plate_sin_guion) === 'KZGH85') {
-      $numero_evento = 45;
-      $ignicion = 1;
+  //   if (strtoupper($plate_sin_guion) === 'KZGH85') {
+  //     $numero_evento = 45;
+  //     $ignicion = 1;
      
-  }
+  // }
+
+  $numero_evento = 45;
+       $ignicion = 1;
+
+  $key_button8=substr($key_button, -8);
 
     $json = [
       'patente' => $plate_sin_guion,
@@ -143,7 +149,7 @@ foreach ($chunks as $chunk) {
       'numero_satelites' => $numero_satelites,
       'hdop' => 1,
       'edad_dato' => strval($segundos),
-      'rut_conductor' => $key_button,
+      'rut_conductor' => $key_button8,
       'nombre_conductor' => $rut_sin_guion
       //'name'=>$fullName
       //'opcional_1' => $axisXValue/200
@@ -194,6 +200,6 @@ echo "Tiempo  del loop: " . round($tiempo_total, 2) . " segundos ". ". Total  de
 
 
 
-goto Loop;
+//goto Loop;
 
 ?>
