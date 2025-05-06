@@ -200,6 +200,6 @@ echo "Tiempo  del loop: " . round($tiempo_total, 2) . " segundos ". ". Total  de
 
 
 
-//goto Loop;
+goto Loop;
 
 ?>
