@@ -1,6 +1,7 @@
 <?php
 
-date_default_timezone_set('America/Santiago');
+//date_default_timezone_set('America/Santiago');
+date_default_timezone_set('UTC');
 
 $user = "spence";
 $pasw = "123";
